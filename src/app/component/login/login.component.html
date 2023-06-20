@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="background-image"></div>
+    <div class="overlay"></div>
+    <div class="row">
+        <div class="login-container">
+            <h1 class="my-5">Sign In</h1>
+            <form (ngSubmit)="login()">
+              <div class="form-group">
+                <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="Email address">
+              </div>
+              <div *ngIf="mailerrorMessage" class="text-warning error-message">Please enter a valid email or phone number.</div>
+
+              <div class="form-group">
+                <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Password">
+              </div>
+              <div *ngIf="passerrorMessage" class="text-warning error-message"> Please enter your password </div>
+
+              <p class="error-message bg-warning text-white col-4" *ngIf="loginFailed">{{errorMessage}}</p>
+              <button type="submit">Sign In</button>
+              <div class="remember-forgot mt-2">
+                <label>
+                  <input type="checkbox"> Remember me
+                </label>
+                <a href="#">Forgot password?</a>
+              </div>
+              <div>
+              </div>
+            </form>
+            <div class="signup-container">
+              <span>New to Netflix?</span>
+              <a href="#">Sign up now</a>
+            </div>
+        </div>
+      </div>
+</div>
+
+
+
+  
